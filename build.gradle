@@ -88,6 +88,6 @@ publishing {
     }
 
     repositories {
-        // Add repositories to publish to here.
+        // Ad repositories to publish to here.
     }
 }
