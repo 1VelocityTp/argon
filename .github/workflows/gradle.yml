@@ -52,7 +52,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.tagger.outputs.tag }}
-          release_name: "Build ${{ steps.tagger.outputs.tag }}"
+          name: "Build ${{ steps.tagger.outputs.tag }}"
           files: build/libs/*.jar
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
