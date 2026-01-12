@@ -50,9 +50,10 @@ jobs:
       # Upload JARs to GitHub Release
       - name: Upload Release Assets
         uses: softprops/action-gh-release@v2
+        if: success() # Only run if the build actually worked
         with:
           tag_name: ${{ steps.tagger.outputs.tag }}
-          name: "Build ${{ steps.tagger.outputs.tag }}"  # This is correct now
-          files: build/libs/*.jar
+          name: "ImmediatelyFast Build ${{ steps.tagger.outputs.tag }}"
+          files: build/libs/ImmediatelyFast-*.jar # Specifically look for the Zenith jar
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
